@@ -1,20 +1,38 @@
-name: build
-on: [push, pull_request, workflow_dispatch]
+name: Build HitColor
+
+on:
+  push:
+    branches: [main, "fix/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 21
-      - uses: gradle/actions/setup-gradle@v4
+          java-version: "21"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: 9.2.0
-      - run: gradle build
-      - uses: actions/upload-artifact@v4
+          gradle-version: "9.2.0"
+
+      - name: Build mod
+        run: gradle build --no-daemon
+
+      - name: Upload JARs
+        uses: actions/upload-artifact@v4
         with:
-          name: hitcolor-jar
+          name: hitcolor-fabric-1.21.11
           path: build/libs/*.jar
+          if-no-files-found: error
