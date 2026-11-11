@@ -71,11 +71,10 @@ public final class HitEffects {
         switch (cfg.animation) {
             case PULSE -> s *= 0.55f + 0.45f * (0.5f + 0.5f * (float) Math.sin(t * Math.PI * 2 * 1.2));
             case FADE -> {
-                // Starker Treffer, der innerhalb von ~0,5 s ausklingt
-                if (since >= 0f && since < 0.7f) {
-                    float e = Math.max(0f, Math.min(1f, 1f - since * sp / 0.5f));
-                    s *= 0.2f + 0.8f * e;
-                }
+                // Nach einem Treffer innerhalb von 0,5 s vollständig ausblenden.
+                // Vor dem ersten Treffer bleibt die Overlay-Farbe unsichtbar.
+                float elapsed = Math.max(0f, since) * sp;
+                s *= elapsed < 0.5f ? 1f - elapsed / 0.5f : 0f;
             }
             case HEARTBEAT -> {
                 float ph = t % 1f;
