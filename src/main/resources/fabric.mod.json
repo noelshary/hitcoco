@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "id": "hitcolor",
   "version": "${version}",
-  "name": "HitColor",
-  "description": "Make every hit shine in YOUR color. Pick from 40 colors, set the strength, add animations, particles and sounds.",
+  "name": "HitColor Client",
+  "description": "An animated client hub with HitColor, HUD stats, theme controls, crosshair editor and optional mod integrations.",
   "authors": ["noelshary"],
   "contact": {
-    "homepage": "https://github.com/noelshary/hitcoco",
+    "homepage": "https://modrinth.com/mod/hitcolor",
     "sources": "https://github.com/noelshary/hitcoco",
     "issues": "https://github.com/noelshary/hitcoco/issues"
   },
