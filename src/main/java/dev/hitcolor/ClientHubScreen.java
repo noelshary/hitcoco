@@ -70,7 +70,10 @@ public final class ClientHubScreen extends Screen {
                 slider("Animation speed", x + colW + 14, y + 38, colW, (c.speed - .25f) / 1.75f, v -> c.speed = .25f + (float)v * 1.75f, HitColorConfig::save);
                 button("Particles: " + onOff(c.particles), x, y + 78, colW, () -> { c.particles = !c.particles; HitColorConfig.save(); page(Page.HITCOLOR); });
                 button("Sound: " + c.sound.name(), x + colW + 14, y + 78, colW, () -> { c.sound = HitColorConfig.HitSound.values()[(c.sound.ordinal()+1)%HitColorConfig.HitSound.values().length]; HitColorConfig.save(); page(Page.HITCOLOR); });
-                button("Test hit effect", x, y + 112, panelW - 44, () -> HitEffects.playSound(c));
+                button("Open full HSV / HEX color picker + robot preview", x, y + 112, panelW - 44, () -> {
+                    if (client != null) client.setScreen(new HitColorScreen(this));
+                });
+                button("Play test sound", x, y + 144, panelW - 44, () -> HitEffects.playSound(c));
             }
             case HUD -> {
                 ClientHubConfig c = ClientHubConfig.get();
