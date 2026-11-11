@@ -59,12 +59,19 @@ public final class HitColorConfig {
         }
         if (instance.animation == null) instance.animation = Animation.PULSE;
         if (instance.sound == null) instance.sound = HitSound.CHIME;
-        if (instance.speed <= 0f) instance.speed = 1.0f;
+        if (!Float.isFinite(instance.strength)) instance.strength = 0.6f;
+        if (!Float.isFinite(instance.speed) || instance.speed <= 0f) instance.speed = 1.0f;
+        if (!Float.isFinite(instance.volume)) instance.volume = 0.5f;
+        instance.strength = Math.max(0f, Math.min(1f, instance.strength));
+        instance.speed = Math.max(0.25f, Math.min(2.0f, instance.speed));
+        instance.volume = Math.max(0f, Math.min(1f, instance.volume));
+        instance.color &= 0xFFFFFF;
         save();
     }
 
     public static void save() {
         try {
+            Files.createDirectories(FILE.getParent());
             Files.writeString(FILE, GSON.toJson(instance));
         } catch (IOException e) {
             System.err.println("[HitColor] Config konnte nicht gespeichert werden: " + e);
