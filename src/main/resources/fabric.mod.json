@@ -6,9 +6,9 @@
   "description": "Make every hit shine in YOUR color. Pick from 40 colors, set the strength, add animations, particles and sounds.",
   "authors": ["noelshary"],
   "contact": {
-    "homepage": "https://modrinth.com/mod/hitcolor",
-    "sources": "https://github.com/noelshary/HitColor",
-    "issues": "https://github.com/noelshary/HitColor/issues"
+    "homepage": "https://github.com/noelshary/hitcoco",
+    "sources": "https://github.com/noelshary/hitcoco",
+    "issues": "https://github.com/noelshary/hitcoco/issues"
   },
   "license": "MIT",
   "icon": "assets/hitcolor/icon.png",

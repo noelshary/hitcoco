@@ -2,7 +2,7 @@
 
 **Every hit in your color.** HitColor replaces the red flash on hit entities with any color you like – from a subtle see-through tint to a bold neon glow.
 
-![Fabric](https://img.shields.io/badge/loader-Fabric-blue) ![MC](https://img.shields.io/badge/Minecraft-1.21.11-green) ![Side](https://img.shields.io/badge/side-client-orange)
+![Fabric](https://img.shields.io/badge/loader-Fabric-blue) ![MC](https://img.shields.io/badge/Minecraft-1.21.11-green) ![Side](https://img.shields.io/badge/side-client-orange) [![Build](https://github.com/noelshary/hitcoco/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/noelshary/hitcoco/actions/workflows/build.yml)
 
 ## Features
 - 🎨 **Color picker** with saturation field + hue bar, 40 quick colors, HEX input and random button
@@ -23,10 +23,11 @@ HitColor changes only what **you** see. It does not touch gameplay, works on any
 - Optional: [Mod Menu](https://modrinth.com/mod/modmenu)
 
 ## Build
+```bash
+gradle build --no-daemon
 ```
-gradle wrapper      # only once, if gradlew is missing
-./gradlew build     # jar ends up in build/libs/
-```
+
+The GitHub Actions workflow builds the mod on pushes and pull requests. Download the compiled JAR from the workflow run's **Artifacts** section. Local build output is in `build/libs/`.
 
 ## License
 MIT
