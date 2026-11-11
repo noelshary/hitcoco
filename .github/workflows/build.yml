@@ -2,7 +2,7 @@ name: Build HitColor
 
 on:
   push:
-    branches: [main, "fix/**"]
+    branches: [main, "fix/**", "feature/**"]
   pull_request:
   workflow_dispatch:
 
