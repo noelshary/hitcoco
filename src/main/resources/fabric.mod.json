@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "hitcolor",
+  "version": "${version}",
+  "name": "HitColor",
+  "description": "Make every hit shine in YOUR color. Pick from 40 colors, set the strength, add animations, particles and sounds.",
+  "authors": ["noelshary"],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/hitcolor",
+    "sources": "https://github.com/noelshary/HitColor",
+    "issues": "https://github.com/noelshary/HitColor/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/hitcolor/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["dev.hitcolor.HitColorClient"],
+    "modmenu": ["dev.hitcolor.ModMenuIntegration"]
+  },
+  "mixins": ["hitcolor.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}

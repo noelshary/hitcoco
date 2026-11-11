@@ -1,0 +1,21 @@
+HITCOLOR - SO BAUST DU DIE MOD (Windows)
+
+1) ZIP entpacken (Ordner "hitcolor").
+
+2) Aus deinem funktionierenden Projekt (z. B. flat2d oder neoloni-styles) in diesen
+   Ordner kopieren:
+      - gradlew
+      - gradlew.bat
+      - gradle\wrapper\gradle-wrapper.jar   (nur diese eine Datei in gradle\wrapper\)
+   Die gradle-wrapper.properties ist schon dabei.
+
+3) In gradle.properties stehen die Versionen. Falls dein flat2d-Projekt andere Werte hat
+   (yarn_mappings, loader_version, fabric_api_version), diese Zeilen von dort uebernehmen.
+
+4) build.bat doppelklicken. Danach liegt die Mod hier:
+      build\libs\hitcolor-1.0.0.jar        <- die kommt in den mods-Ordner
+   (die Datei mit "-sources" brauchst du nicht)
+
+5) Zum Spielen: Fabric Loader + Fabric API, Mod Menu ist optional. Menue oeffnen mit Taste H.
+
+FUER GITHUB: "YOUR_GITHUB_NAME" in fabric.mod.json, LICENSE und README.md durch noelshary ersetzen.
