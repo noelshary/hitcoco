@@ -3,6 +3,7 @@ package dev.hitcolor;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.input.KeyInput;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.SliderWidget;
@@ -197,9 +198,13 @@ public final class ClientHubScreen extends Screen {
     }
 
     @Override
-    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-        if (keyCode == GLFW.GLFW_KEY_ESCAPE || keyCode == GLFW.GLFW_KEY_RIGHT_SHIFT) { close(); return true; }
-        return super.keyPressed(keyCode, scanCode, modifiers);
+    public boolean keyPressed(KeyInput input) {
+        int keyCode = input.key();
+        if (keyCode == GLFW.GLFW_KEY_ESCAPE || keyCode == GLFW.GLFW_KEY_RIGHT_SHIFT) {
+            close();
+            return true;
+        }
+        return super.keyPressed(input);
     }
 
     @Override
