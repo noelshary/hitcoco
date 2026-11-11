@@ -1,6 +1,8 @@
 {
-  "key.hitcolor.open": "HitColor-Menü öffnen",
+  "key.hitcolor.open": "HitColor-Farbmenü öffnen",
+  "key.hitcolor.hub": "HitColor Client-Menü öffnen",
   "key.category.hitcolor.main": "HitColor",
+  "key.category.hitcolor.hub": "HitColor Client",
   "hitcolor.screen.title": "HitColor",
   "hitcolor.option.enabled": "HitColor: %s",
   "hitcolor.option.strength": "Stärke: %s%%",
