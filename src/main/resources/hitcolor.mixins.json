@@ -3,7 +3,8 @@
   "package": "dev.hitcolor.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "OverlayTextureAccessor"
+    "OverlayTextureAccessor",
+    "CrosshairMixin"
   ],
   "injectors": {
     "defaultRequire": 1
