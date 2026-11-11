@@ -2,6 +2,7 @@ package dev.hitcolor;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.network.PlayerListEntry;
@@ -36,7 +37,7 @@ public final class ClientHubHud {
     public static void register() {
         if (registered) return;
         registered = true;
-        HudElementRegistry.addLast(Identifier.of("hitcolor", "client_hud"),
+        HudElementRegistry.attachElementAfter(VanillaHudElements.CHAT, Identifier.of("hitcolor", "client_hud"),
             (DrawContext context, RenderTickCounter tickCounter) -> render(context));
     }
 
